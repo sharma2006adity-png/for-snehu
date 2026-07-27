@@ -56,7 +56,23 @@ animation:fade 1s;
 from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
 }
+.fadeOut{
+opacity:0;
+transition:.8s;
+}
 
+.fadeIn{
+opacity:1;
+transition:.8s;
+}
+
+#quote{
+transition:.8s;
+}
+
+#slide{
+transition:1s;
+}
 .heart{
 position:absolute;
 font-size:22px;
@@ -77,7 +93,20 @@ transform:translateY(-120vh);
 opacity:0;
 }
 }
-
+#counter{
+position:fixed;
+top:20px;
+right:20px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(10px);
+padding:8px 18px;
+border-radius:30px;
+color:white;
+font-size:18px;
+font-weight:bold;
+z-index:999;
+}
+  
 audio{
 display:none;
 }
@@ -89,9 +118,9 @@ display:none;
 <img id="slide" src="images/1.jpg">
 
 <div class="overlay"></div>
-
+<div id="counter">1 / 10</div>
 <div class="quote" id="quote">
-It all started with a simple hello... ❤️
+Every beautiful friendship has a beginning... this is ours. 🤍
 </div>
 
 <audio autoplay loop>
@@ -123,36 +152,57 @@ const photos=[
 ];
 
 const quotes=[
-"It all started with a simple hello... ❤️",
-"Little did I know you'd become so special. 🌸",
-"Some smiles become memories forever. 😊",
-"Every picture tells a beautiful story. ✨",
-"You never had to try to be special. 💖",
-"Thank you for every smile. 🤍",
-"True friendship is rare. ❤️",
-"Stay exactly the way you are. 🌷",
-"You'll always be remembered. 🌹",
-"Happy Friendship Day Bul Bul ❤️"
+"Every beautiful friendship has a beginning... this is ours. 🤍",
+"A few moments... a lifetime of memories. ✨",
+"Your smile has always made ordinary days feel special. 🌸",
+"Some people become a habit... you became a beautiful memory. ❤️",
+"Thank you for every laugh, every conversation and every moment. 😊",
+"Distance may change many things, but not genuine friendships. 🌷",
+"You're one of the few people I'm truly grateful to have met. 💖",
+"Some bonds never need a reason... they simply matter. 🤍",
+"Whatever happens in life, I'll always cherish these memories with you. 🌹",
+"Happy Friendship Day, Snehu ❤️<br><small>With love, Aditya 😘</small>"
 ];
-
+const slide = document.getElementById("slide");
+const quote = document.getElementById("quote");
+const counter = document.getElementById("counter");
 let i=0;
 
-setInterval(()=>{
+function nextPhoto(){
 
 i++;
 
 if(i>=photos.length){
 
-location.href="letter.html";
+setTimeout(()=>{
+window.location.href="letter.html";
+},2500);
 
 return;
 
 }
 
-document.getElementById("slide").src=photos[i];
-document.getElementById("quote").innerHTML=quotes[i];
+slide.style.opacity="0";
+quote.style.opacity="0";
 
-},6000);
+setTimeout(()=>{
+
+slide.src=photos[i];
+quote.innerHTML=quotes[i];
+counter.innerHTML=(i+1)+" / 10";
+slide.style.opacity="1";
+quote.style.opacity="1";
+
+},700);
+
+}
+
+setInterval(nextPhoto,6000);
+
+</script>
+
+</body>
+</html>
 
 </script>
 
