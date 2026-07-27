@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One More Question ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+overflow:hidden;
+}
+
+.card{
+background:white;
+width:380px;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+animation:pop .7s;
+}
+
+@keyframes pop{
+from{transform:scale(.7);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+h1{
+color:#ff2d75;
+margin-bottom:10px;
+}
+
+p{
+margin-bottom:25px;
+}
+
+button{
+display:block;
+width:100%;
+padding:15px;
+margin:12px 0;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:#ffe6ef;
+transition:.3s;
+}
+
+button:hover{
+background:#ff2d75;
+color:white;
+transform:scale(1.03);
+}
+
+#msg{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+color:#ff2d75;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>❤️ One Last Question</h1>
+
+<p>Who am I to you?</p>
+
+<button onclick="wrong()">Stranger</button>
+
+<button onclick="wrong()">Loved One</button>
+
+<button onclick="wrong()">Crush</button>
+
+<button onclick="correct()">Friend ❤️</button>
+
+<div id="msg"></div>
+
+</div>
+
+<script>
+
+function wrong(){
+
+document.getElementById("msg").innerHTML="😝 Think Again Bul Bul";
+
+}
+
+function correct(){
+
+document.getElementById("msg").innerHTML="🥹 Exactly... Friend Forever ❤️";
+
+setTimeout(function(){
+
+location.href="gallery.html";
+
+},2500);
+
+}
+
+</script>
+
+</body>
+</html>
