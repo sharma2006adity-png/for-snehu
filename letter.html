@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For Snehu ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#ffd6e8,#fff8fb);
+overflow:auto;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+}
+
+.hearts{
+
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+
+}
+
+.heart{
+
+position:absolute;
+bottom:-50px;
+font-size:22px;
+animation:float 10s linear infinite;
+opacity:.8;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.paper{
+
+width:92%;
+max-width:760px;
+height:85vh;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+padding:45px;
+
+overflow:auto;
+
+animation:openPaper 1.4s ease;
+
+}
+
+@keyframes openPaper{
+
+from{
+
+transform:scale(.4) rotateX(90deg);
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1) rotateX(0);
+opacity:1;
+
+}
+
+}
+
+h1{
+
+text-align:center;
+color:#ff4f87;
+margin-bottom:25px;
+
+}
+
+#text{
+
+font-size:21px;
+line-height:1.9;
+color:#444;
+white-space:pre-wrap;
+
+}
+
+.next{
+
+display:none;
+
+margin:35px auto 10px;
+
+padding:16px 38px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:40px;
+
+background:#ff4f87;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.next:hover{
+
+transform:scale(1.05);
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="paper">
+
+<h1>💌 For Snehu ❤️</h1>
+
+<div id="text"></div>
+
+<button class="next" id="nextBtn">
+Open One Last Surprise ❤️
+</button>
+
+</div>
+<script>
+
+// Floating Hearts
+
+for(let i=0;i<35;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(6+Math.random()*5)+"s";
+
+heart.style.fontSize=(18+Math.random()*20)+"px";
+
+document.getElementById("hearts").appendChild(heart);
+
+}
+
+// Letter Text
+
+const message=`Dear Snehu (Bul Bul), ❤️
+
+Happy Friendship Day...
+
+I don't know if words can truly express everything I feel, but I still wanted to try.
+
+Some people come into our lives quietly, and without even realizing it, they become one of the most beautiful parts of our memories.
+
+Thank you for every smile, every conversation, every little moment that made life feel lighter.
+
+Whenever I look back at our memories, I realise they are not just pictures...
+they are moments I'll always treasure.
+
+Khala Tampoo...
+No matter where life takes us, I genuinely hope you always stay happy, keep smiling, and achieve everything you dream of.
+
+You deserve all the happiness in the world.
+
+This little surprise isn't about expensive gifts.
+It's simply my way of saying...
+
+Thank you for being such a special friend.
+
+Happy Friendship Day once again. ❤️
+
+With lots of care,
+Aditya 🤍`;
+
+const text=document.getElementById("text");
+
+let index=0;
+
+function typeWriter(){
+
+if(index<message.length){
+
+text.innerHTML+=message.charAt(index);
+
+index++;
+
+setTimeout(typeWriter,38);
+
+}else{
+
+document.getElementById("nextBtn").style.display="block";
+
+}
+
+}
+
+typeWriter();
+  document.getElementById("nextBtn").onclick=function(){
+
+window.location.href="final.html";
+
+};
+
+</script>
+
+</body>
+</html>
