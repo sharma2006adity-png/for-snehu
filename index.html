@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Snehu ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd1dc,#fff0f5);
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+width:90%;
+max-width:450px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+animation:pop .8s ease;
+}
+
+@keyframes pop{
+from{
+transform:scale(.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+h1{
+color:#ff2d75;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+line-height:30px;
+margin-bottom:25px;
+}
+
+button{
+background:#ff2d75;
+color:white;
+padding:15px 40px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+opacity:.5;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100vh);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Hi Snehu ❤️</h1>
+
+<p>
+
+I made something special for you...
+
+<br><br>
+
+Before opening it,
+
+please complete a few tiny tasks. ✨
+
+</p>
+
+<button onclick="location.href='password.html'">
+
+Start Journey ❤️
+
+</button>
+
+</div>
+
+<script>
+
+for(let i=0;i<25;i++){
+
+let h=document.createElement("div");
+
+h.innerHTML="❤️";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
